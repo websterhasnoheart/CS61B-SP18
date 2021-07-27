@@ -10,7 +10,7 @@ public class DebugExercise3 {
             double cost = in.readDouble();
             int numAvailable = in.readInt();
             if (foodType.equals("turnip")) {
-                int newTotal = totalTurnips + Math.abs(numAvailable);
+                int newTotal = totalTurnips + Math.abs(numAvailable);  //对numAvailable取绝对值可以防止负值结果产生
                 totalTurnips = newTotal;
             }
             in.readLine();
