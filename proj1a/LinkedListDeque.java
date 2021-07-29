@@ -14,6 +14,7 @@ public class LinkedListDeque<T> {
     private Node sentinel;
     private int size;
 
+    /* Constructor for a new LinkedListDeque*/
     public LinkedListDeque(){
         sentinel = new Node(null,(T) new Object(),null);
         //make the deque a circular linkedList
@@ -132,7 +133,7 @@ public class LinkedListDeque<T> {
         LinkedListDeque<Integer> list = new LinkedListDeque<Integer>();
         list.addFirst(1);
         list.addLast(2);
-        list.printDeque();
+        LinkedListDeque<Integer> newList = new LinkedListDeque<>(list);
 
     }
 
