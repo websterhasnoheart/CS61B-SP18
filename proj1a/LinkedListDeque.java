@@ -117,6 +117,7 @@ public class LinkedListDeque<T> {
         return getRecrusive(p,index);
     }
 
+    /* getRecursive helper method */
     public T getRecrusive(Node node,int index){
         if(index == 0){
             return node.item;
@@ -126,17 +127,4 @@ public class LinkedListDeque<T> {
         }
         return getRecrusive(node,index);
     }
-
-
-
-    public static void main(String[] args) {
-        LinkedListDeque<Integer> list = new LinkedListDeque<Integer>();
-        list.addFirst(1);
-        list.addLast(2);
-        LinkedListDeque<Integer> newList = new LinkedListDeque<>(list);
-
-    }
-
-
-
 }
