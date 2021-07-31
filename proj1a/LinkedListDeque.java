@@ -1,11 +1,11 @@
 public class LinkedListDeque<T> {
 
-    private class Node{
+    private class Node {
         private Node prev;
         private Node next;
         private T item;
 
-        public Node(LinkedListDeque<T>.Node prev,T item,LinkedListDeque<T>.Node next) {
+        public Node(LinkedListDeque<T>.Node prev, T item, LinkedListDeque<T>.Node next) {
             this.prev = prev;
             this.next = next;
             this.item = item;
@@ -17,7 +17,7 @@ public class LinkedListDeque<T> {
 
     /* Constructor for a new LinkedListDeque*/
     public LinkedListDeque() {
-        sentinel = new Node(null, (T) new Object(),null);
+        sentinel = new Node(null, (T) new Object(), null);
         //make the deque a circular linkedList
         sentinel.next = sentinel;
         sentinel.prev = sentinel;
@@ -38,7 +38,7 @@ public class LinkedListDeque<T> {
 
     /* Add an item in front of the circular list*/
     public void addFirst(T item) {
-        Node firstNode = new Node(sentinel,item,sentinel.next);
+        Node firstNode = new Node(sentinel, item, sentinel.next);
         sentinel.next.prev = firstNode;
         sentinel.next = firstNode;
         size++;
@@ -46,7 +46,7 @@ public class LinkedListDeque<T> {
 
     /* Add an item at the end of the circular list*/
     public void addLast(T item) {
-        Node lastNode = new Node(sentinel.prev,item,sentinel);
+        Node lastNode = new Node(sentinel.prev, item, sentinel);
         sentinel.prev.next = lastNode;
         sentinel.prev = lastNode;
         size++;
@@ -115,18 +115,18 @@ public class LinkedListDeque<T> {
         }
 
         Node p = sentinel.next;
-        return getRecrusive(p,index);
+        return getRecrusive(p, index);
     }
 
     /* getRecursive helper method */
-    private T getRecrusive(Node node,int index) {
+    private T getRecrusive(Node node, int index) {
         if (index == 0) {
             return node.item;
         } else {
             node = node.next;
             index--;
         }
-        return getRecrusive(node,index);
+        return getRecrusive(node, index);
     }
 }
 

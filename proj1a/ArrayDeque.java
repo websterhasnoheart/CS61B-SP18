@@ -22,7 +22,7 @@ public class ArrayDeque<T> {
 
     /* get the last index */
     private int minusOne(int index) {
-        return Math.floorMod(index - 1,items.length);
+        return Math.floorMod(index - 1, items.length);
     }
 
     /* get the next index */
@@ -35,7 +35,7 @@ public class ArrayDeque<T> {
     }
 
     public void addFirst(T item) {
-//        resize();
+        resize();
         items[nextFirst] = item;
         size++;
         nextFirst = minusOne(nextFirst);
@@ -46,6 +46,9 @@ public class ArrayDeque<T> {
     }
 
     public T removeFirst() {
+        if (isEmpty()) {
+            return null;
+        }
         resize();
         T removedItem = getFirst();
         nextFirst = plusOne(nextFirst);
@@ -66,6 +69,9 @@ public class ArrayDeque<T> {
     }
 
     public T removeLast() {
+        if (isEmpty()) {
+            return null;
+        }
         resize();
         T removedItem = getLast();
         nextLast = minusOne(nextLast);
@@ -76,26 +82,26 @@ public class ArrayDeque<T> {
     }
 
     public void printDeque() {
-        for (int index = plusOne(nextFirst);index != nextLast;index = plusOne(index)) {
+        for (int index = plusOne(nextFirst); index != nextLast; index = plusOne(index)) {
             System.out.print(items[index] + " ");
         }
         System.out.println();
     }
 
     public T get(int index) {
-        if (index < 0 || index >= size) {
+        if (index < 0 || index >= size||isEmpty()) {
             return null;
         }
-        index = Math.floorMod(plusOne(nextFirst) + index,items.length);
+        index = Math.floorMod(plusOne(nextFirst) + index, items.length);
         return items[index];
     }
 
     /* Designing resize() method */
     private void resize() {
-        if(size == items.length) {
+        if (size == items.length) {
             expand();
         }
-        if(size < (items.length) * 0.25 && items.length > 8) {
+        if (size < (items.length) * 0.25 && items.length > 8) {
             reduce();
         }
     }
@@ -123,18 +129,18 @@ public class ArrayDeque<T> {
         nextLast = plusOne(nextLast);
     }
 
-//    public static void main(String[] args) {
-//        ArrayDeque<Integer> aq = new ArrayDeque<Integer>();
-//        for (int i = 0; i < 100; i++) {
-//            aq.addLast(i);
-//        }
-//        aq.printDeque();
-//        for (int i = 0; i < 98; i++) {
-//            aq.removeFirst();
-//        }
-//        aq.printDeque();
-//        System.out.println(aq.get(0));
-//    }
+    public static void main(String[] args) {
+        ArrayDeque<Integer> arrayDeque = new ArrayDeque<Integer>();
+        for (int i = 0; i < 100; i++) {
+            arrayDeque.addFirst(i);
+        }
+        arrayDeque.printDeque();
 
+        for(int i = 0; i < 99; i++) {
+            arrayDeque.removeFirst();
+        }
+
+        System.out.println(arrayDeque.size());
+    }
 }
 
