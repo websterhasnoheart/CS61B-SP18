@@ -89,7 +89,7 @@ public class ArrayDeque<T> {
     }
 
     public T get(int index) {
-        if (index < 0 || index >= size||isEmpty()) {
+        if (index < 0 || index >= size || isEmpty()) {
             return null;
         }
         index = Math.floorMod(plusOne(nextFirst) + index, items.length);
@@ -128,19 +128,18 @@ public class ArrayDeque<T> {
         items[nextLast] = tempArr[end];
         nextLast = plusOne(nextLast);
     }
-
-    public static void main(String[] args) {
-        ArrayDeque<Integer> arrayDeque = new ArrayDeque<Integer>();
-        for (int i = 0; i < 100; i++) {
-            arrayDeque.addFirst(i);
-        }
-        arrayDeque.printDeque();
-
-        for(int i = 0; i < 99; i++) {
-            arrayDeque.removeFirst();
-        }
-
-        System.out.println(arrayDeque.size());
-    }
+//    public static void main(String[] args) {
+//        ArrayDeque<Integer> arrayDeque = new ArrayDeque<Integer>();
+//        for (int i = 0; i < 100; i++) {
+//            arrayDeque.addFirst(i);
+//        }
+//        arrayDeque.printDeque();
+//
+//        for (int i = 0; i < 99; i++) {
+//            arrayDeque.removeFirst();
+//        }
+//
+//        System.out.println(arrayDeque.size());
+//    }
 }
 
