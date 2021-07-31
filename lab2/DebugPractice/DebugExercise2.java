@@ -6,6 +6,7 @@ public class DebugExercise2 {
     /** Returns the max of a and b. Do not step into this function. 
       * This function may have a bug, but if it does, you should find it
       * by stepping over, not into. */
+    //Bug1:
     public static int max(int a, int b) {
 //        int w = (b - a) >> 31;
 //        /* If you're stepping into this function, click the
@@ -56,6 +57,7 @@ public class DebugExercise2 {
     }
 
     /** Returns the sum of all elements in x. */
+    //Bug2
     public static int arraySum(int[] x) {
         int i = 0;
         int sum = 0;

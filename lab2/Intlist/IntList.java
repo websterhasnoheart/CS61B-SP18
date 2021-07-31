@@ -118,8 +118,6 @@ public class IntList {
 
         temp2.rest = B;
         return resultList;
-
-
     }
 
 
