@@ -14,7 +14,7 @@ public class Palindrome {
     }
 
     private boolean isPalindromHelper(Deque deque) {
-        if(deque.size() <= 1) {
+        if (deque.size() <= 1) {
             return true;
         } else if (deque.removeFirst() != deque.removeLast()) {
             return false;
@@ -23,7 +23,7 @@ public class Palindrome {
         }
     }
 
-    public boolean isPalindrome(String word,CharacterComparator cc) {
+    public boolean isPalindrome(String word, CharacterComparator cc) {
         Deque deque = wordToDeque(word);
         return isPalindromeHelper(deque,cc);
     }
@@ -31,14 +31,10 @@ public class Palindrome {
     private boolean isPalindromeHelper(Deque deque, CharacterComparator cc) {
         if (deque.size() <= 1) {
             return true;
-        } else if (!cc.equalChars((char)deque.removeFirst(),(char)deque.removeLast())) {
+        } else if (!cc.equalChars((char) deque.removeFirst(), (char) deque.removeLast())) {
             return false;
         } else {
-            return isPalindromeHelper(deque,cc);
+            return isPalindromeHelper(deque, cc);
         }
     }
-
-
-
-
 }

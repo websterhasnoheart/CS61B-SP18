@@ -21,14 +21,13 @@ public class TestPalindrome {
         assertTrue(palindrome.isPalindrome("bab"));
         assertTrue(palindrome.isPalindrome("asdsa"));
         assertFalse(palindrome.isPalindrome("cat"));
-        assertTrue(palindrome.isPalindrome("cat"));
     }
 
     @Test
     public void testPalindorme() {
         OffByOne offByOne = new OffByOne();
-        assertTrue(palindrome.isPalindrome("flake",offByOne));
-        assertFalse(palindrome.isPalindrome("whatthefuck",offByOne));
-        assertTrue(palindrome.isPalindrome("&%",offByOne));
+        assertTrue(palindrome.isPalindrome("flake", offByOne));
+        assertFalse(palindrome.isPalindrome("whatthefuck", offByOne));
+        assertTrue(palindrome.isPalindrome("&%", offByOne));
     }
 }

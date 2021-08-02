@@ -17,9 +17,9 @@ public class PalindromeFinder {
         }
 
         // FUN PARTⅠ
-        while(!in.isEmpty()) {
+        while (!in.isEmpty()) {
             char word = in.readChar();
-            if(offBy3.equalChars('c',word)) {
+            if (offBy3.equalChars('c', word)) {
                 System.out.println(word);
             }
         }
