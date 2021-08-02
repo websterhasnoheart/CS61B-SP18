@@ -57,7 +57,9 @@ public class TestArrayDequeGold {
         for (int i = 0; i < 10; i++) {
             Integer actual = actualList.get(i);
             Integer expected = expectedList.get(i);
-            assertEquals(expected + " not equal to " + actual, expected, actual);
+            assertEquals("Oh noooo!\nThis is bad:\n   Random number " + actual
+                            + " not equal to " + expected + "!",
+                    expected, actual);
         }
 
         /* removeLast() test */
@@ -70,13 +72,14 @@ public class TestArrayDequeGold {
 
         Integer actual = wdeque.size();
         Integer expected = rdeque.size();
-        assertEquals("Oh noooo!\nThis is bad in removeLast():\n   actual size " + actual
+        assertEquals("Oh noooo!\nThis is bad:\n   Random number " + actual
                         + " not equal to " + expected + "!",
                 expected, actual);
 
         for (int i = 0; i < 10; i++) {
-            assertEquals("Bad removeLast(): " + expectedList.get(i) + " not equal to " + actualList.get(i),
-                    expectedList.get(i), actualList.get(i));
+            assertEquals("Oh noooo!\nThis is bad:\n   Random number " + actual
+                            + " not equal to " + expected + "!",
+                    expected, actual);
         }
     }
 
