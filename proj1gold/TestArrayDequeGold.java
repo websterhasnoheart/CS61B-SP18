@@ -83,31 +83,31 @@ public class TestArrayDequeGold {
         }
     }
 
-    @Test
-    public void testArrayDeque2() {
-        StudentArrayDeque<Integer> wdeque = new StudentArrayDeque<>();
-        ArrayDequeSolution<Integer> rdeque = new ArrayDequeSolution<>();
-
-        Integer random = StdRandom.uniform(100);
-        wdeque.addFirst(random);
-        rdeque.addFirst(random);
-        assertEquals("addFirst(" + random + ")", wdeque.get(0), rdeque.get(0));
-        System.out.println("addFirst(" + random + ")");
-
-        wdeque.addLast(random);
-        rdeque.addLast(random);
-        assertEquals("addFirst(" + random + ")", wdeque.get(1), rdeque.get(1));
-        System.out.println("addFirst(" + random + ")");
-
-        Integer actual = wdeque.removeFirst();
-        Integer expected = rdeque.removeFirst();
-        assertEquals("removeFirst()", actual, expected);
-        System.out.println("removeFirst()");
-
-        actual = wdeque.removeLast();
-        expected = rdeque.removeLast();
-        assertEquals("removeLast()", actual, expected);
-        System.out.println("removeLast()");
-    }
+//    @Test
+//    public void testArrayDeque2() {
+//        StudentArrayDeque<Integer> wdeque = new StudentArrayDeque<>();
+//        ArrayDequeSolution<Integer> rdeque = new ArrayDequeSolution<>();
+//
+//        Integer random = StdRandom.uniform(100);
+//        wdeque.addFirst(random);
+//        rdeque.addFirst(random);
+//        assertEquals("addFirst(" + random + ")", wdeque.get(0), rdeque.get(0));
+//        System.out.println("addFirst(" + random + ")");
+//
+//        wdeque.addLast(random);
+//        rdeque.addLast(random);
+//        assertEquals("addFirst(" + random + ")", wdeque.get(1), rdeque.get(1));
+//        System.out.println("addFirst(" + random + ")");
+//
+//        Integer actual = wdeque.removeFirst();
+//        Integer expected = rdeque.removeFirst();
+//        assertEquals("removeFirst()", actual, expected);
+//        System.out.println("removeFirst()");
+//
+//        actual = wdeque.removeLast();
+//        expected = rdeque.removeLast();
+//        assertEquals("removeLast()", actual, expected);
+//        System.out.println("removeLast()");
+//    }
 
 }
