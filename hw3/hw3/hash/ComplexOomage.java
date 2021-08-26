@@ -71,7 +71,7 @@ public class ComplexOomage implements Oomage {
         }
     }
 
-    public static ComplexOomage randomComplexOomage() {
+    public static ComplexOomage() {
         int N = StdRandom.uniform(1, 10);
         ArrayList<Integer> params = new ArrayList<>(N);
         for (int i = 0; i < N; i += 1) {
